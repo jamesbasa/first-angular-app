@@ -1,6 +1,8 @@
 <div>
   <button>
-    <img src="assets/task-management-logo.png" alt="Tasks list" />
-    <span>NAME</span>
+    <!-- below is called property binding -->
+    <img [src]="'assets/users/' + selectedUser.avatar" [alt]="selectedUser.name" />
+    <!-- below is called string interpolation -->
+    <span>{{ selectedUser.name }}</span>
   </button>
 </div>
