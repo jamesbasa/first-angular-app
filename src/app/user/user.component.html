@@ -1,8 +1,11 @@
 <div>
-  <button>
+  <!-- below is an event lister -->
+  <button (click)="onSelectUser()">
     <!-- below is called property binding -->
-    <img [src]="'assets/users/' + selectedUser.avatar" [alt]="selectedUser.name" />
+    <img [src]="imagePath" [alt]="currentUser.name" />
     <!-- below is called string interpolation -->
-    <span>{{ selectedUser.name }}</span>
+    <span>{{ currentUser.name }}</span>
+    <!-- below is how you bind an attribute to a dynamic value -->
+    <!-- <div [attr.aria-valuenow]="currentVal"></div> -->
   </button>
 </div>
