@@ -33,7 +33,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 Approaches for updating state:
 
 1. Built-in change detection mechanism - Zone.js notifies Angular about user events, expired timers, etc.
-2. Signals - Objects that store a value and notify Angular about value changes and required UI updates
+2. Signals - Objects that store a value and notify Angular about value changes and required UI updates. Angular analyzes if you're reading a Signal and only recomputes the UI if the Signal changes.
 
 - TS: `selectedUser = signal(DUMMY_USERS[randomIndex]);`
 - HTML: `{{ selectedUser().name }}`
