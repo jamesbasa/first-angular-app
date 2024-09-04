@@ -24,4 +24,8 @@ export class AppComponent implements OnInit {
   imagePath(user: any) {
     return 'assets/users/' + user.avatar;
   }
+
+  onSelectUser(id: any) {
+    console.log(`clicked user with id ${id}`);
+  }
 }
