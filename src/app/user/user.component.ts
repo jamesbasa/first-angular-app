@@ -9,10 +9,8 @@ import { Component, Input } from '@angular/core';
 })
 export class UserComponent {
   @Input() currentUser: any;
-
-  get imagePath() {
-    return 'assets/users/' + this.currentUser.avatar;
-  }
+  @Input() name: string = '';
+  @Input() imagePath: string = '';
 
   onSelectUser() {
     console.log(`clicked ${this.currentUser.name}`);

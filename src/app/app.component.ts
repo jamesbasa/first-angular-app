@@ -20,4 +20,8 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.users = DUMMY_USERS;
   }
+
+  imagePath(user: any) {
+    return 'assets/users/' + user.avatar;
+  }
 }
