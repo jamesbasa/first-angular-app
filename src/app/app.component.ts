@@ -29,10 +29,6 @@ export class AppComponent implements OnInit {
     this.users = DUMMY_USERS;
   }
 
-  imagePath(user: any) {
-    return 'assets/users/' + user.avatar;
-  }
-
   get selectedUser() {
     return this.users.find((user) => user.id === this.selectedUserId);
   }
