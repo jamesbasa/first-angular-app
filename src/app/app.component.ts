@@ -5,6 +5,7 @@ import { UserComponent } from './user/user.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { CommonModule } from '@angular/common';
 import { DUMMY_USERS } from './dummy-users';
+import { User } from './user/user.model';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,7 @@ import { DUMMY_USERS } from './dummy-users';
 export class AppComponent implements OnInit {
   title = 'first-angular-app';
 
-  users: any[] = [];
+  users: User[] = [];
   selectedUserId: any;
 
   ngOnInit() {
