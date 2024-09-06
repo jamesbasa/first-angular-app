@@ -7,7 +7,7 @@
     </li>
   </ul>
 
-  <app-task [selectedUser]="selectedUser"></app-task>
+  <app-task *ngIf="selectedUser" [selectedUser]="selectedUser"></app-task>
 </main>
 
 <router-outlet />
