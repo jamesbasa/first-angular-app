@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { UserComponent } from './user/user.component';
-import { TaskComponent } from './task/task.component';
+import { TasksComponent } from './tasks/tasks.component';
 import { CommonModule } from '@angular/common';
 import { DUMMY_USERS } from './dummy-users';
 
@@ -15,7 +15,7 @@ import { DUMMY_USERS } from './dummy-users';
     RouterOutlet,
     HeaderComponent,
     UserComponent,
-    TaskComponent,
+    TasksComponent,
     CommonModule,
   ],
 })
