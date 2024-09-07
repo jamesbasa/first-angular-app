@@ -1,6 +1,6 @@
 <div>
   <!-- below is an event lister -->
-  <button (click)="onSelectUser()">
+  <button [class.active]="selected" (click)="onSelectUser()">
     <!-- below is called property binding -->
     <img [src]="imagePath(user)" [alt]="user.name" />
     <!-- below is called string interpolation -->
