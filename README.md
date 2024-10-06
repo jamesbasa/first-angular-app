@@ -38,8 +38,7 @@ Approaches for updating state:
 - TS: `selectedUser = signal(DUMMY_USERS[randomIndex]);`
 - HTML: `{{ selectedUser().name }}`
 
-Directives:
-(Components are directives with templates)
+Directives (element enhancements; components are directives with templates):
 
 - ngModel - helps with extracting or changing user input values
-  - `<input ngModel>`
+  - `<input ngModel>`, import FormsModule
