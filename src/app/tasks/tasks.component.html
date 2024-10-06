@@ -1,8 +1,12 @@
+<ng-template [ngIf]="isAddingTask">
+  <app-new-task (cancel)="onCancelAddTask()"></app-new-task>
+</ng-template>
+
 <section id="tasks">
   <header>
     <h2>{{ selectedUser.name }}'s Tasks</h2>
     <menu>
-      <button>Add Task</button>
+      <button (click)="onAddTask()">Add Task</button>
     </menu>
   </header>
 
