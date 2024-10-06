@@ -25,4 +25,8 @@ export class TasksComponent implements OnInit {
       (task: { userId: any }) => task.userId === this.selectedUser.id
     );
   }
+
+  onCompleteTask(id: string) {
+    this.tasks = this.tasks.filter((task) => task.id !== id);
+  }
 }
