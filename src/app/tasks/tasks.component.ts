@@ -1,9 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
 import { TaskComponent } from './task/task.component';
-import { DUMMY_TASKS } from '../dummy-tasks';
-import { Task, TaskInput } from './task/task.model';
 import { NewTaskComponent } from './new-task/new-task.component';
+import { TasksService } from './tasks.service';
+import { TaskInput } from './task/task.model';
 
 @Component({
   selector: 'app-tasks',
@@ -12,20 +12,16 @@ import { NewTaskComponent } from './new-task/new-task.component';
   templateUrl: './tasks.component.html',
   styleUrl: './tasks.component.css',
 })
-export class TasksComponent implements OnInit {
+export class TasksComponent {
   @Input({ required: true }) selectedUser: any;
 
-  tasks: Task[] = [];
   isAddingTask = false;
 
-  ngOnInit() {
-    this.tasks = DUMMY_TASKS;
-  }
+  // dependency injection: angular creates and reuses this instance in other components
+  constructor(private tasksService: TasksService) {}
 
   get tasksOfSelectedUser() {
-    return this.tasks.filter(
-      (task: { userId: any }) => task.userId === this.selectedUser.id
-    );
+    return this.tasksService.getUserTasks(this.selectedUser.id);
   }
 
   onStartAddTask() {
@@ -37,17 +33,11 @@ export class TasksComponent implements OnInit {
   }
 
   onAddTask(taskInput: TaskInput) {
-    this.tasks.push({
-      id: new Date().getTime().toString(),
-      userId: this.selectedUser.id,
-      title: taskInput.title,
-      summary: taskInput.summary,
-      dueDate: taskInput.dueDate,
-    });
+    this.tasksService.addTask(taskInput, this.selectedUser.id);
     this.isAddingTask = false;
   }
 
   onCompleteTask(id: string) {
-    this.tasks = this.tasks.filter((task) => task.id !== id);
+    this.tasksService.removeTask(id);
   }
 }
