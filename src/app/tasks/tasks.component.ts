@@ -18,6 +18,7 @@ export class TasksComponent {
   isAddingTask = false;
 
   // dependency injection: angular creates and reuses this instance in other components
+  // alternative: private tasksService = inject(TasksService)
   constructor(private tasksService: TasksService) {}
 
   get tasksOfSelectedUser() {
@@ -28,12 +29,7 @@ export class TasksComponent {
     this.isAddingTask = true;
   }
 
-  onCancelAddTask() {
-    this.isAddingTask = false;
-  }
-
-  onAddTask(taskInput: TaskInput) {
-    this.tasksService.addTask(taskInput, this.selectedUser.id);
+  onCloseAddTask() {
     this.isAddingTask = false;
   }
 

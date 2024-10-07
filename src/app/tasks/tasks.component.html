@@ -1,7 +1,7 @@
 <ng-template [ngIf]="isAddingTask">
   <app-new-task
-    (cancel)="onCancelAddTask()"
-    (addTask)="onAddTask($event)"
+    [userId]="this.selectedUser.id"
+    (close)="onCloseAddTask()"
   ></app-new-task>
 </ng-template>
 
