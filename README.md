@@ -42,3 +42,11 @@ Directives (element enhancements; components are directives with templates):
 
 - ngModel - helps with extracting or changing user input values
   - `<input ngModel>`, import FormsModule
+
+Content Projection (inserting content inside another component):
+
+```
+<div>
+  <ng-content />
+</div>
+```
