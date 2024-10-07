@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
-import { TaskComponent } from '../task/task.component';
+import { TaskComponent } from './task/task.component';
 import { DUMMY_TASKS } from '../dummy-tasks';
-import { Task, TaskInput } from '../task/task.model';
-import { NewTaskComponent } from '../new-task/new-task.component';
+import { Task, TaskInput } from './task/task.model';
+import { NewTaskComponent } from './new-task/new-task.component';
 
 @Component({
   selector: 'app-tasks',
